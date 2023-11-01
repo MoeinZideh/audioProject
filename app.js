@@ -82,8 +82,6 @@ function resetPage() {
     title.style.color = '#000';
     title.textContent = "please click on buttons or press the first letter key"
     title.style.backgroundColor = "inherit"
-
-
 }
 
 function errorMassage() {
