@@ -79,13 +79,18 @@ function timSound(){
 
 function resetPage() {
     container.style.backgroundColor = '#F4DFB6';
+    title.style.color = '#000';
     title.textContent = "please click on buttons or press the first letter key"
+    title.style.backgroundColor = "inherit"
+
 
 }
 
 function errorMassage() {
     container.style.backgroundColor = 'pink';
     title.textContent = "Please press the correct key.Press 'Enter' and try again"
+    title.style.color = "#000"
+    title.style.backgroundColor = "red"
 }
 
 document.addEventListener("keydown", (event) => {
