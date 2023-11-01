@@ -11,11 +11,15 @@ body {
 
 #container{
     height: 100vh;
+    padding: 30px 20px 0;
     background-color: #F4DFB6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-#container h1{
+#container .titleWrapper h1{
     text-align: center;
-    padding-top: 30px;
 }
 #soundsArea{
     height: 100vh;
@@ -32,4 +36,15 @@ body {
     padding: 10px 20px;
     color: #9A4444;
     cursor: pointer;
+}
+
+/* ******************* Media query **************** */
+
+@media screen and (max-width: 768px) {
+    #container .titleWrapper {
+        margin-bottom: 30px;
+    }
+    #container .titleWrapper h1{
+        font-size: 24px;
+    }
 }
