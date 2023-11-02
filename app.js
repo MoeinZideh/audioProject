@@ -3,6 +3,7 @@ new Audio();
 const container = document.getElementById("container")
 const title = document.querySelector("h1")
 const soundNameArea = document.getElementById("soundNameArea")
+const speakerHole = document.querySelectorAll("span")
 
 const boom = document.getElementById("boom")
 const playBoom = document.getElementById("playBoom")
@@ -33,9 +34,24 @@ let snarePath = new Audio('./sounds/snare.wav')
 let tinkPath = new Audio('./sounds/tink.wav')
 let tomPath = new Audio('./sounds/tom.wav')
 
+// ************** function for speaker shadow ***************
+function speakerShadow() {
+    for(let i = 0; i < speakerHole.length; i++) {
+        speakerHole[i].style.boxShadow = "2px 2px 15px 3px #f5f5f5"
+    }
+    setTimeout(function(){
+        for(let i = 0; i < speakerHole.length; i++) {
+            speakerHole[i].style.boxShadow = "none"
+        }
+    }, 600)
+}
+
+// ************** set mouse event & function for each of key  ***************
 boom.addEventListener("click", boomSound)
 function boomSound(){
     boomPath.play();
+    speakerShadow();
+    boom.style.boxShadow = "2px 5px 14px #fff"
     boom.style.boxShadow = "2px 5px 14px #fff"
     boom.innerHTML = "Boom"
     setTimeout(function(){
@@ -47,6 +63,7 @@ function boomSound(){
 clap.addEventListener("click", calpSound)
 function calpSound(){
     clapPath.play();
+    speakerShadow();
     clap.style.boxShadow = "2px 5px 14px #fff"
     clap.innerHTML = "clap"
     setTimeout(function(){
@@ -58,6 +75,7 @@ function calpSound(){
 hihat.addEventListener("click", hihatSound)
 function hihatSound(){
     hihatPath.play();
+    speakerShadow();
     hihat.style.boxShadow = "2px 5px 14px #fff"
     hihat.innerHTML = "Hihat"
     setTimeout(function(){
@@ -69,6 +87,7 @@ function hihatSound(){
 kick.addEventListener("click", kickSound)
 function kickSound(){
     kickPath.play();
+    speakerShadow();
     kick.style.boxShadow = "2px 5px 14px #fff"
     kick.innerHTML = "Kick"
     setTimeout(function(){
@@ -80,6 +99,7 @@ function kickSound(){
 openhat.addEventListener("click", openhatSound)
 function openhatSound() {
     openhatPath.play();
+    speakerShadow();
     openhat.style.boxShadow = "2px 5px 14px #fff"
     openhat.innerHTML = "Openhat"
     setTimeout(function(){
@@ -91,6 +111,7 @@ function openhatSound() {
 ride.addEventListener("click", rideSound)
 function rideSound(){
     ridePath.play();
+    speakerShadow();
     ride.style.boxShadow = "2px 5px 14px #fff"
     ride.innerHTML = "Ride"
     setTimeout(function(){
@@ -102,6 +123,7 @@ function rideSound(){
 snare.addEventListener("click", snareSound)
 function snareSound(){
     snarePath.play();
+    speakerShadow();
     snare.style.boxShadow = "2px 5px 14px #fff"
     snare.innerHTML = "Snare"
     setTimeout(function(){
@@ -113,6 +135,7 @@ function snareSound(){
 tink.addEventListener("click", tinkSound)
 function tinkSound(){
     tinkPath.play();
+    speakerShadow();
     tink.style.boxShadow = "2px 5px 14px #fff"
     tink.innerHTML = "tink"
     setTimeout(function(){
@@ -124,6 +147,7 @@ function tinkSound(){
 tom.addEventListener("click", timSound)
 function timSound(){
     tomPath.play();
+    speakerShadow();
     tom.style.boxShadow = "2px 5px 14px #fff"
     tom.innerHTML = "Tom"
     setTimeout(function(){
@@ -132,22 +156,27 @@ function timSound(){
     },600)
 }
 
+// ************** set function for reset style when users press wrong keys ***************
+
 function resetPage() {
     title.style.color = '#fff';
     title.textContent = "please click on buttons or press the letters on your keyboard"
     title.style.backgroundColor = "inherit"
     title.style.border = "none"
-
 }
 
+// ************** set function to display error message ***************
+
 function errorMassage() {
-    title.textContent = "Please press the correct key.Press 'Enter' and try again"
+    title.textContent = "Please press the correct keys (b c h k o r s t m). Press 'Enter' and try again"
     title.style.color = "#ff0000"
     title.style.backgroundColor = "#ffdddd"
     title.style.border = "1px solid #ff0000"
     title.style.padding = "10px"
     title.style.borderRadius = "5px"
 }
+
+// ************** set key event & function for each of key  ***************
 
 document.addEventListener("keydown", (event) => {
     if(event.key == "b"){
