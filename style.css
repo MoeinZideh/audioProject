@@ -7,38 +7,56 @@
 
 body {
     font-family: Poppins, Lato, Georgia, Times, 'Times New Roman', serif;
+    background-color: #000;
+    /* background-color: #F4DFB6; */
 }
 
 #container{
-    height: 100vh;
-    padding: 30px 20px 0;
-    background-color: #F4DFB6;
+    padding: 30px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+
 #container .titleWrapper h1{
     text-align: center;
+    color: #fff;
+    font-size: 20px;
 }
+
 #soundsArea{
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
+    margin-top: 40px;
 }
 
 #soundsArea>div{
-    border: 5px solid #9A4444;
     border-radius: 10px;
     padding: 10px 20px;
-    color: #9A4444;
+    color: #000;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 100px;
+    background: #fff;
+    font-weight: bold;
+    font-size: 30px;
+    word-break: keep-all
 }
 
-/* ******************* Media query **************** */
+/* *********************** media query ********************** */
+
+@media screen and (max-width: 992px) {
+    #soundsArea>div{
+       height: 300px; 
+    }
+}
 
 @media screen and (max-width: 768px) {
     #container .titleWrapper {
