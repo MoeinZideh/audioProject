@@ -1,4 +1,4 @@
-new Audio();
+// new Audio();
 
 const container = document.getElementById("container")
 const title = document.querySelector("h1")
@@ -37,7 +37,31 @@ function speakerShadow() {
     }, 600)
 }
 
-// ************** set mouse event & function for each of key  ***************
+// ************** set mouse event & function for each of key  **********************
+
+// function soundEfect(sound) {
+//     console.log(sound)
+//     let soundElement = document.getElementById(sound)
+//     console.log(soundElement)
+//     speakerShadow();
+//     soundElement.style.boxShadow = "2px 5px 14px #fff"
+//     soundElement.style.boxShadow = "2px 5px 14px #fff"
+//     soundElement.innerHTML = "Boom"
+//     setTimeout(function(){
+//         soundElement.style.boxShadow = "none"
+//         soundElement.innerHTML = "b"
+//     },600)
+// }
+
+// boom.addEventListener("click", boomSound)
+// function boomSound(event) {
+//     console.log(event.target.innerHTML)
+// }
+
+// function playSound(sound,soundPath){
+//     soundPath.play();
+//     soundEfect(sound)
+// }
 
 boom.addEventListener("click", boomSound)
 function boomSound(){
@@ -173,8 +197,16 @@ function errorMassage() {
 document.addEventListener("keydown", (event) => {
     if(event.key == "b"){
         boomSound()
+        // let sound = "boom"
+        // let soundPath = new Audio('./sounds/boom.wav')
+        // playSound(sound,soundPath)
+        // soundEfect(sound)
     } else if(event.key == "c") {
         calpSound()
+        // let sound = "clap"
+        // let soundPath = new Audio('./sounds/clap.wav')
+        // playSound(sound,soundPath)
+        // soundEfect(sound)
     }else if(event.key == "h") {
         hihatSound()
     }else if(event.key == "k") {
