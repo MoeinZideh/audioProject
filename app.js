@@ -6,23 +6,14 @@ const soundNameArea = document.getElementById("soundNameArea")
 const speakerHole = document.querySelectorAll("span")
 
 const boom = document.getElementById("boom")
-const playBoom = document.getElementById("playBoom")
 const clap = document.getElementById("clap")
-const playCalp = document.getElementById("playCalp")
 const hihat = document.getElementById("hihat")
-const playHihat = document.getElementById("playHihat")
 const kick = document.getElementById("kick")
-const playKick = document.getElementById("playKick")
 const openhat = document.getElementById("openhat")
-const playOpenhat = document.getElementById("playOpenhat")
 const ride = document.getElementById("ride")
-const playRide = document.getElementById("playRide")
 const snare = document.getElementById("snare")
-const playSnare = document.getElementById("playSnare")
 const tink = document.getElementById("tink")
-const playTink = document.getElementById("playTink")
 const tom = document.getElementById("tom")
-const playTom = document.getElementById("playTom")
 
 let boomPath = new Audio('./sounds/boom.wav')
 let clapPath = new Audio('./sounds/clap.wav')
@@ -47,6 +38,7 @@ function speakerShadow() {
 }
 
 // ************** set mouse event & function for each of key  ***************
+
 boom.addEventListener("click", boomSound)
 function boomSound(){
     boomPath.play();
